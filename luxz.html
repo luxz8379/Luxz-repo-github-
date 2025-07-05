@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxz Official</title>
+  <style>
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://i.ibb.co/tBQWxdn/bg-neon.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: white;
+      text-align: center;
+    }
+
+    .typing-text {
+      font-size: 22px;
+      color: white;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid white;
+      width: 0;
+      animation: typing 5s steps(50, end) forwards, blink 0.9s step-end infinite;
+      margin-bottom: 35px;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 25px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(255, 0, 255, 0.3);
+      animation: slideDown 1.2s ease-out;
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #00f0ff;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      margin: 10px 0 5px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .btn {
+      display: block;
+      margin: 12px auto;
+      padding: 12px 20px;
+      border-radius: 30px;
+      width: 90%;
+      text-align: center;
+      font-weight: bold;
+      color: #fff;
+      background: transparent;
+      border: 2px solid #ff00ff;
+      box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff inset;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      font-size: 16px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .btn:nth-of-type(1) { animation-delay: 5.5s; }
+    .btn:nth-of-type(2) { animation-delay: 6s; }
+    .btn:nth-of-type(3) { animation-delay: 6.5s; }
+    .btn:nth-of-type(4) { animation-delay: 7s; }
+    .btn:nth-of-type(5) { animation-delay: 7.5s; }
+    .btn:nth-of-type(6) { animation-delay: 8s; }
+    .btn:nth-of-type(7) { animation-delay: 8.5s; }
+    .btn:nth-of-type(8) { animation-delay: 9s; }
+
+    .btn:hover {
+      background: #ff00ff;
+      color: #000;
+      box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff, 0 0 60px #ff00ff;
+      transform: scale(1.05);
+    }
+
+    .location {
+      margin-top: 15px;
+      font-size: 13px;
+      opacity: 0.7;
+    }
+
+    .story-box {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 10px;
+      animation: fadeIn 1s ease forwards;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="typing-text">Selamat datang di Web Sosial Media Luxz</div>
+
+  <div class="card">
+    <img src="https://files.catbox.moe/7bgsi0.jpg" alt="">
+    <h2>Luxz Official</h2>
+    <p>Halo saya Luxz, developer pemula, my crush Erren ♥️</p>
+
+    <a class="btn" href="https://www.tiktok.com/@dizkaez" target="_blank">Tiktok</a>
+    <a class="btn" href="https://www.instagram.com/dizkaez" target="_blank">Instagram</a>
+    <a class="btn" href="https://wa.me/62882000244726" target="_blank">WhatsApp</a>
+    <a class="btn" href="https://youtube.com/@dizkaez" target="_blank">YouTube</a>
+    <a class="btn" href="https://facebook.com/dizkaez" target="_blank">Facebook</a>
+    <a class="btn" href="https://example.com/dj-kasih-aba-aba.mp3" target="_blank">Download Lagu</a>
+    <a class="btn" href="https://saweria.co/dizkaez" target="_blank">Support Me</a>
+    <button class="btn" onclick="toggleStory()">Siapakah Luxz?</button>
+
+    <div id="story" class="story-box">
+      <p>Luxz adalah seorang pemuda dari Bandung, Jawa Barat yang hobi dunia digital. Awalnya cuma suka utak-atik HTML buat iseng, tapi sekarang mulai serius bikin karya. Dia punya cita-cita jadi developer kreatif, dan diam-diam menyimpan rasa pada seseorang bernama Erren ♥️.</p>
+    </div>
+
+    <p class="location">Bandung, Jawa Barat, Indonesia</p>
+  </div>
+
+  <script>
+    function toggleStory() {
+      const story = document.getElementById('story');
+      if (story.style.display === "none" || story.style.display === "") {
+        story.style.display = "block";
+        story.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        story.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
